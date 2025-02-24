@@ -1,6 +1,6 @@
+<%@page import="MVC_Practice.DTO.StudentDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,12 +35,15 @@
     </style>
 </head>
 <body>
+<%
+	StudentDto std=(StudentDto) request.getAttribute("std");
+%>
     <div class="container">
         <h2>Student Details</h2>
-        <p><strong>Name:</strong> ${std.name}</p>
-        <p><strong>Username:</strong> ${std.username}</p>
-        <p><strong>Email:</strong> ${std.email}</p>
-        <p><strong>Password:</strong> ${std.pass}</p>
+        <p><strong>Name:</strong> <%=std.getName()%></p>
+        <p><strong>Username:</strong><%=std.getUsername()%></p>
+        <p><strong>Email:</strong> <%=std.getEmail() %></p>
+        <p><strong>Password:</strong><%=std.getPass() %></p>
     </div>
 </body>
 </html>
